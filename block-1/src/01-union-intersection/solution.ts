@@ -12,23 +12,9 @@ type Rectangle = {
 
 type Shape = Circle | Rectangle;
 
-// 2. User intersection type
-type BasicUser = {
-  id: string;
-  name: string;
-};
-
-type AdminRole = {
-  isAdmin: true;
-  adminPermissions: string[];
-};
-
-type EditorRole = {
-  isEditor: true;
-  editableCategories: string[];
-};
-
-type User = BasicUser & (AdminRole | EditorRole);
+function assertNever(entry: never) {
+  return new Error("Unexpected entry");
+}
 
 // 3. Shape handler
 function calculateArea(shape: Shape): number {
@@ -37,6 +23,8 @@ function calculateArea(shape: Shape): number {
       return Math.PI * shape.radius ** 2;
     case "rectangle":
       return shape.width * shape.height;
+    default:
+      throw assertNever(shape);
   }
 }
 
