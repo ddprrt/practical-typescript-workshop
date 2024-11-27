@@ -12,6 +12,7 @@ This repository contains examples demonstrating modern TypeScript features and b
 6. using Declarations
 7. The NoInfer Utility Type
 8. switch(true) Type Narrowing
+9. Decorator Metadata
 
 ## Usage
 
