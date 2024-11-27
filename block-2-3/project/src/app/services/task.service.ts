@@ -1,7 +1,13 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { ApiClient, TaskFilter } from "../../sdk/api-client";
-import { Task, TaskPriority, TaskStatus } from "../../types/task.types";
+import {
+  CreateTask,
+  Task,
+  TaskPriority,
+  TaskStatus,
+  UpdateTask,
+} from "../../types/task.types";
 import { FetchClient } from "../../sdk/http/fetch-client";
 
 @Injectable({
@@ -31,13 +37,13 @@ export class TaskService {
     return this.tasksSubject.asObservable();
   }
 
-  async createTask(task: Omit<Task, "id">): Promise<Task> {
+  async createTask(task: CreateTask): Promise<Task> {
     const createdTask = await this.apiClient.createTask(task);
     await this.loadTasks();
     return createdTask;
   }
 
-  async updateTask(id: string, updates: Partial<Task>): Promise<Task> {
+  async updateTask(id: string, updates: UpdateTask): Promise<Task> {
     const updatedTask = await this.apiClient.updateTask(id, updates);
     await this.loadTasks();
     return updatedTask;

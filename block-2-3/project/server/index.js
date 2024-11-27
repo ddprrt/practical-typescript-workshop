@@ -104,27 +104,28 @@ app.patch("/tasks/:id", (req, res) => {
     );
   }
 
+  const metadata = {
+    updatedAt: new Date().toISOString(),
+    version: (task.metadata.version || 0) + 1,
+    revisionHistory: [
+      ...task.revisionHistory,
+      {
+        id: uuidv4(),
+        timestamp: new Date().toISOString(),
+        userId: "system",
+        changes: {
+          fieldName: Object.keys(req.body)[0],
+          oldValue: task[Object.keys(req.body)[0]],
+          newValue: req.body[Object.keys(req.body)[0]],
+        },
+      },
+    ],
+  };
+
   const updatedTask = {
     ...task,
     ...req.body,
-    metadata: {
-      ...task.metadata,
-      updatedAt: new Date().toISOString(),
-      version: (task.metadata.version || 0) + 1,
-      revisionHistory: [
-        ...task.metadata.revisionHistory,
-        {
-          id: uuidv4(),
-          timestamp: new Date().toISOString(),
-          userId: "system",
-          changes: {
-            fieldName: Object.keys(req.body)[0],
-            oldValue: task[Object.keys(req.body)[0]],
-            newValue: req.body[Object.keys(req.body)[0]],
-          },
-        },
-      ],
-    },
+    ...metadata,
   };
 
   tasks.set(taskId, updatedTask);

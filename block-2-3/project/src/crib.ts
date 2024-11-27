@@ -1,31 +1,37 @@
 import { v4 as uuidv4 } from "uuid";
 
-export enum TaskPriority {
-  LOW = "LOW",
-  MEDIUM = "MEDIUM",
-  HIGH = "HIGH",
-  CRITICAL = "CRITICAL",
-}
+type Values<T> = T[keyof T];
 
-export enum TaskStatus {
-  TODO = "TODO",
-  IN_PROGRESS = "IN_PROGRESS",
-  REVIEW = "REVIEW",
-  DONE = "DONE",
-  ARCHIVED = "ARCHIVED",
-}
+export const TaskPriority = {
+  LOW: "LOW",
+  MEDIUM: "MEDIUM",
+  HIGH: "HIGH",
+  CRITICAL: "CRITICAL",
+} as const;
+
+export type TaskPriority = Values<typeof TaskPriority>;
+
+export const TaskStatus = {
+  TODO: "TODO",
+  IN_PROGRESS: "IN_PROGRESS",
+  REVIEW: "REVIEW",
+  DONE: "DONE",
+  ARCHIVED: "ARCHIVED",
+};
+
+export type TaskStatus = Values<typeof TaskStatus>;
 
 export interface TaskMetadata {
-  createdAt?: string;
-  updatedAt?: string;
-  lastModifiedBy?: string;
-  version?: number;
-  revisionHistory?: TaskRevision[];
-  tags?: string[];
+  createdAt: string;
+  updatedAt: string;
+  lastModifiedBy: string;
+  version: number;
+  revisionHistory: TaskRevision[];
+  tags: string[];
   estimatedTime?: number;
   actualTime?: number;
-  complexity?: number;
-  impact?: number;
+  complexity: number;
+  impact: number;
   costCenter?: string;
   departmentCode?: string;
 }
@@ -51,39 +57,13 @@ export interface TaskAssignee {
   permissions: string[];
 }
 
-export interface Task extends TaskMetadata {
+export interface Task {
   id: string;
   title: string;
   description: string;
   priority: TaskPriority;
   status: TaskStatus;
-  assignees: TaskAssignee[];
-  parentTaskId?: string;
-  subtasks: string[];
-  dependencies: string[];
-  attachments: TaskAttachment[];
-  comments: TaskComment[];
-}
-
-export interface UpdateTask extends TaskMetadata {
-  id?: string;
-  title?: string;
-  description?: string;
-  priority?: TaskPriority;
-  status?: TaskStatus;
-  assignees?: TaskAssignee[];
-  parentTaskId?: string;
-  subtasks?: string[];
-  dependencies?: string[];
-  attachments?: TaskAttachment[];
-  comments?: TaskComment[];
-}
-
-export interface CreateTask extends TaskMetadata {
-  title: string;
-  description: string;
-  priority: TaskPriority;
-  status: TaskStatus;
+  metadata: TaskMetadata;
   assignees: TaskAssignee[];
   parentTaskId?: string;
   subtasks: string[];
@@ -121,14 +101,16 @@ export interface TaskReaction {
 export class TaskBuilder {
   private task: Partial<Task> = {
     id: uuidv4(),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastModifiedBy: "system",
-    version: 1,
-    revisionHistory: [],
-    tags: [],
-    complexity: 1,
-    impact: 1,
+    metadata: {
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      lastModifiedBy: "system",
+      version: 1,
+      revisionHistory: [],
+      tags: [],
+      complexity: 1,
+      impact: 1,
+    },
     assignees: [],
     subtasks: [],
     dependencies: [],

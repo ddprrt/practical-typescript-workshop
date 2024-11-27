@@ -1,4 +1,10 @@
-import { Task, TaskPriority, TaskStatus } from "../types/task.types";
+import {
+  CreateTask,
+  Task,
+  TaskPriority,
+  TaskStatus,
+  UpdateTask,
+} from "../types/task.types";
 import { Client } from "./http/client.interface";
 import { FetchClient } from "./http/fetch-client";
 
@@ -87,7 +93,6 @@ export class ApiClient {
         errorData.error.details,
       );
     }
-
     return (response as ApiResponse<T>).data;
   }
 
@@ -130,14 +135,14 @@ export class ApiClient {
     return this.makeRequest<Task>(`/tasks/${id}`);
   }
 
-  async createTask(task: Omit<Task, "id">): Promise<Task> {
+  async createTask(task: CreateTask): Promise<Task> {
     return this.makeRequest<Task>("/tasks", {
       method: "POST",
       body: task,
     });
   }
 
-  async updateTask(id: string, task: Partial<Task>): Promise<Task> {
+  async updateTask(id: string, task: UpdateTask): Promise<Task> {
     return this.makeRequest<Task>(`/tasks/${id}`, {
       method: "PATCH",
       body: task,
