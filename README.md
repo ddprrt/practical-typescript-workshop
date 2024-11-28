@@ -8,6 +8,7 @@ This repository contains the contents for the Practical TypeScript workshop.
 
 1. Node.js 22+
 2. An TypeScript capable editor (e.g. Visual Studio Code, Zed, ...)
+3. If you want to code along, install the dependencies in each folder / block
 
 ## Contents
 
