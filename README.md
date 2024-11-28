@@ -18,14 +18,14 @@ Contents are found in [block-1](./block-1). You can install dependencies but the
 
 We work on the
 
-- [Union and Intersection Types](./block-1/src/01-union-intersection)
-- [Type Predicates](./block-1/src/02-type-predicates)
-- [Generics](./block-1/src/03-generics)
-- [Template Literal Types](./block-1/src/04-template-literals)
-- [Generic Constraints](./block-1/src/05-generic-constraints)
-- [Variadic Tuples](./block-1/src/06-variadic-tuples)
-- [Function Arguments](./block-1/src/07-function-arguments)
-- [Conditional Types](./block-1/src/08-conditional-types)
+- [Union and Intersection Types](./block-1/01-union-intersection)
+- [Type Predicates](./block-1/02-type-predicates)
+- [Generics](./block-1/03-generics)
+- [Template Literal Types](./block-1/04-template-literals)
+- [Generic Constraints](./block-1/05-generic-constraints)
+- [Variadic Tuples](./block-1/06-variadic-tuples)
+- [Function Arguments](./block-1/07-function-arguments)
+- [Conditional Types](./block-1/08-conditional-types)
 
 Please follow these steps:
 

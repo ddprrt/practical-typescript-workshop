@@ -1,11 +1,6 @@
-# TypeScript Advanced Concepts Workshop
+# TypeScript Type System Workshop Examples
 
-This workshop covers advanced TypeScript concepts with practical examples. Each folder contains:
-- A `task.ts` file with the exercise
-- A `solution.ts` file with the implementation
-- A `README.md` explaining the concept
-
-## Topics Covered
+## Examples
 
 1. Set Theory Basics
 2. Union and Intersection Types
@@ -16,9 +11,18 @@ This workshop covers advanced TypeScript concepts with practical examples. Each 
 7. Variadic Tuple Types
 8. Conditional Types
 
-## Getting Started
+## Usage
 
-1. Navigate to each folder
-2. Read the README.md
-3. Try to implement the task in `task.ts`
-4. Compare with `solution.ts`
+Each example contains:
+- README.md with instructions
+- task.ts file with the exercise
+- solution.ts file with the implementation
+
+## Requirements
+
+- Latest TypeScript version
+- LTS Node version
+
+## Type Checking
+
+Run `npm run type-check` to verify all examples compile correctly.
