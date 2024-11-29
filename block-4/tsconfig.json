@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "lib": ["ES2023", "DOM", "ESNext.Disposable", "ESNext.Decorators"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": false,
+    "useDefineForClassFields": true,
+    "moduleResolution": "bundler"
+  },
+  "include": ["./**/*"]
+}
