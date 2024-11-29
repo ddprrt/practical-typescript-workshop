@@ -1,4 +1,4 @@
-**WARNING** WORK IN PROGRESS NOT READY TO CLONE (Update Dec. 1)
+> **STATUS** Dependencies done. Ready to fork (Updates may happen prior to the workshop)
 
 # Workshop: Practical TypeScript
 
