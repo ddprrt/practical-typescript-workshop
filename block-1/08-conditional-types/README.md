@@ -17,5 +17,5 @@ type Arr = [number, string];
 type ArrElem = ArrayElement<Arr>;  // expected to be `number | string`
 
 type Obj = { a: number; b: string };
-type NullableObj = Nullable<Obj>;  // expected to be `{ a: number | null; b: string | null }
+type NullableObj = Nullable<Obj>;  // expected to be `{ a: number | null; b: string | null }`
 ```
