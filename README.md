@@ -7,7 +7,7 @@ This repository contains the contents for the Practical TypeScript workshop.
 ## Prerequisites
 
 1. Node.js 22+
-2. An TypeScript capable editor (e.g. Visual Studio Code, Zed, ...)
+2. Any TypeScript capable editor (e.g. Visual Studio Code, Zed, ...)
 3. If you want to code along, install the dependencies in each folder / block with your favourite package manager
 4. Deno is helpful if you want to run the examples in block-1 quickly
 
@@ -15,9 +15,9 @@ This repository contains the contents for the Practical TypeScript workshop.
 
 ### 1. Type System Fundamentals
 
-Contents are found in [block-1](./block-1). You can install dependencies but they're not requried as long as you use a TypeScript capable editor.
+Contents are found in [block-1](./block-1). You can install dependencies but they're not required as long as you use a TypeScript capable editor.
 
-We work on the
+We work on
 
 - [Union and Intersection Types](./block-1/01-union-intersection)
 - [Type Predicates](./block-1/02-type-predicates)
@@ -38,12 +38,12 @@ Please follow these steps:
 
 ### 2. Type Design
 
-Contents are found in [block-2-3](./block-2-3). Please find the worst Angular application ever written and navigate around. Got to [the project folder](./block-2-3/project), install the dependencies and try to compile the software.
+Contents are found in [block-2-3](./block-2-3). Please find the worst Angular application ever written and navigate around. Go to [the project folder](./block-2-3/project), install the dependencies and try to compile the software.
 
 We discuss and refactor the design of our `Task` types and the SDK, including:
 
 - States vs boolean flags
-- Inference vs Annotation
+- Inference vs. Annotation
 - Derived types
 - Interfaces vs. type aliases
 - return types
@@ -64,7 +64,7 @@ Continued in [block-2-3](./block-2-3/). We discuss and refactor the design of ba
 
 ### 4. TypeScript 5+ Features
 
-Contents are found in [block-4](./block-4). You can install dependencies but they're not requried as long as you use a TypeScript capable editor.
+Contents are found in [block-4](./block-4). You can install dependencies but they're not required as long as you use a TypeScript capable editor.
 
 We look at some of the most noteworthy TypeScript 5+ features, including:
 
